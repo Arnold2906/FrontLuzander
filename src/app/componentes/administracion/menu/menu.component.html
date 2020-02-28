@@ -1,0 +1,27 @@
+<header>
+    <nav>
+        <li><h2>Tintes Luzander</h2></li>
+        <li> <a [routerLink]="['/menuAdmin/productos']">Inicio</a></li>
+        <li> <a [routerLink]="['/menuAdmin/productos']">Administrador&nbsp;&nbsp;&nbsp;<i class="fa fa-user"></i></a></li>
+
+    </nav>
+</header>
+<div class="sidebar">
+    <ul>
+        <li routerLinkActive="active">
+          <a  [routerLink]="['/menuAdmin/productos']">
+            <i class="fas fa-store-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;Productos
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['menuAdmin/ventas']">
+            <i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;Órdenes de venta
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['menuAdmin/clientes']">
+            <i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;&nbsp;Lista de Clientes
+          </a>
+        </li>
+    </ul>
+</div>

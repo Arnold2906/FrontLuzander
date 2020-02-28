@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="card text-center w-50 mt-4">
+      <div class="card-body">
+          <h1 class="card-title">TINTES LUZANDER</h1>
+          <form class="w-50" (ngSubmit)="iniciarSesion(correo,password)" novalidate>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                        <i class="fa fa-user"></i>
+                      </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Usuario"
+                        name="correo"
+                        aria-label="Usuario" required [(ngModel)] = "correo">
+              </div>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fa fa-unlock"></i></span>
+                  </div>
+                  <input type="password" class="form-control" name="password"
+                        placeholder="Contraseña" aria-label="Contraseña"
+                        required [(ngModel)] = "password">
+              </div>
+              <div class="input-group mb-3">
+                  <button type="submit" class="btn btn-success btn-block">
+                    Iniciar Sesión <i class="fa fa-sign-in-alt"></i>
+                  </button>
+              </div>
+          </form>
+      </div>
+      <div class="card-footer text-muted">
+          <a href="#">¿Olvidó su Contraseña?</a>
+      </div>
+  </div>
+</div>

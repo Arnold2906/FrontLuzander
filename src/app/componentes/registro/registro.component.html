@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="info">
+    <h1>Registro</h1><span>TINTES LUZANDER</span>
+  </div>
+</div>
+<div class="form">
+  <div class="thumbnail"><img src="assets/img/ecommerce.png"/></div>
+  <form class="registro-form" novalidate
+  (ngSubmit)="registrarUsuario(nombre,a_paterno,a_materno,telefono,direccion,correo,pass,rep_pass)">
+    <input type="text" placeholder="Nombre" required
+            name="nombre" [(ngModel)]="nombre"/>
+    <input type="text" placeholder="Apellido Paterno" required
+            name="a_paterno" [(ngModel)]="a_paterno"/>
+    <input type="text" placeholder="Apellido Materno" required
+            name="a_materno" [(ngModel)]="a_materno"/>
+    <input type="text" placeholder="Teléfono" required
+            name="telefono" [(ngModel)]="telefono"/>
+    <input type="text" placeholder="Dirección" required
+            name="direccion" [(ngModel)]="direccion"/>
+    <input type="email" placeholder="Correo Electrónico" required
+            name="correo" [(ngModel)]="correo"/>
+    <input type="password" placeholder="Contraseña" required
+            name="pass" [(ngModel)]="pass"/>
+    <input type="password" placeholder="Repite la contraseña" required
+            name="rep_pass" [(ngModel)]="rep_pass"/>
+    <button type="submit">Registrar</button>
+    <p class="message">Ya estas registrado? <a [routerLink]="['/login']">Iniciar Sesión</a></p>
+  </form>
+</div>

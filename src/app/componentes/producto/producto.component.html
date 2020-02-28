@@ -1,0 +1,37 @@
+<h1 class="animated fadeIn">{{producto[0][0].ProductoNombre}}</h1>
+<hr>
+<div class="row animated fadeIn">
+  <div class="col-5">
+    <img src="{{urlProductoImage}}" alt="" width="400">
+  </div>
+  <div class="col-7">
+    <h2>Descripción</h2>
+    <p>{{producto[0][0].ProductosDescripcion}}</p>
+    <!-- <div *ngIf="pelicula.tagline">
+      <h2>Frase Célebre</h2>
+      <p>{{pelicula.tagline}}</p>
+    </div> -->
+    <p>Tipo: <span class="badge badge-primary">{{producto[0][0].TipoProducto}}</span></p>
+    <p>Precio: <span class="badge badge-success">{{producto[0][0].PrecioProducto}}.00</span></p>
+    <button type="button" class="btn btn-outline-danger"
+            (click)="regresar()">
+      <i class="fas fa-angle-left"></i>&nbsp;Regresar
+    </button>
+    &nbsp;
+    <button type="button" class="btn btn-outline-success"
+            (click)="comprar()">
+      <i class="far fa-credit-card"></i>&nbsp;Comprar
+    </button>
+    &nbsp;
+    <button type="button"
+            class="btn btn-outline-primary"
+            (click)="llenarCarrito()">  
+      <i class="fas fa-shopping-cart"></i>&nbsp;Añadir al carrito
+    </button>
+  </div>
+</div>
+<br><br>
+<div class="alert alert-success" role="alert" [ngClass]="{'hide': !alerta}">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Añadido al carrito!</strong>
+  </div>

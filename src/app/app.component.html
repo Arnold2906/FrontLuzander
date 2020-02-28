@@ -1,0 +1,6 @@
+<app-navbar *ngIf="eNavBar"></app-navbar>
+<app-menu *ngIf="eMenu"></app-menu>
+<div class=""
+    [ngClass]="{'container': eContenedor, 'main-container': eContenedor}">
+  <router-outlet></router-outlet>
+</div>

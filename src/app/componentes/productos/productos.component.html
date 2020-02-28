@@ -1,0 +1,15 @@
+<div class="container">
+  <h2 class="animated fast fadeIn">Productos Calzados</h2>
+  <hr>
+  <div class="card-columns">
+    <div class="card puntero animated fadeIn"
+        *ngFor="let producto of productos; let i=index"
+        (click)="mostrarProducto(producto.id)">
+      <img [src]="'assets/img/p'+ (i+1) +'.jpg'" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{producto.ProductoNombre}}</h5>
+        <p class="card-text">{{producto.ProductosDescripcion}}</p>
+      </div>
+    </div>
+  </div>
+</div>

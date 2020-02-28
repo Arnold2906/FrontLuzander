@@ -1,0 +1,38 @@
+<div id="content" #content>
+  <div class="container">
+  	<div>
+  		<h1>Comprobante de Pago</h1>
+  		<br><br>
+  	</div>
+  	<div class = "contenido_item">
+  		<h4>{{CUsuario.nombre}} {{CUsuario.a_paterno}} {{CUsuario.a_materno}}</h4>
+		<h4>RUC: 10721782005</h4>
+		<h4>Fecha: {{Pfecha}}</h4>
+  		<table class="table table-bordered">
+  		  <thead class="thead-dark">
+  		    <tr class="table-secundary">
+  		      <th scope="col">Cantidad</th>
+  		      <th scope="col">Descripcion</th>
+  		      <th scope="col">Precio Unitario</th>
+  		      <th scope="col">Precio Total</th>
+  		    </tr>
+  		  </thead>
+  		  <tbody>
+			<tr *ngFor="let producto of productos">
+				<td>{{producto.cantidad}}</td>
+				<td>{{producto.nombreProducto}}</td>
+				<td>{{producto.precio}}.00</td>
+				<td>{{producto.precio}}.00</td>
+			</tr>
+  		  </tbody>
+  		</table>
+  		<div class="impuesto">
+  			<h4 align="right" >Importe Base: {{total}}</h4>
+			<h4 align="right" >IGV (18%): {{IGV}}</h4>
+			<h4 align="right" >Importe Total:{{total+IGV}}</h4>
+  	</div>
+  		</div>
+  </div>
+</div>
+
+<button type="button" (click)="descargarPDF()">Descargar PDF</button>

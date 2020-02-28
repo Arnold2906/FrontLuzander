@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Tienda Luzander</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/inicio']">Inicio</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/nosotros']">Nosotros</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/productos']">Productos</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/contacto']">Contacto</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/ayuda']">Ayuda</a>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-info my-2 my-sm-0"
+              type="button" (click)="abrirlogin()" *ngIf="!sesionIniciada()">
+        <i class="fas fa-user-circle"></i>&nbsp;&nbsp;Iniciar Sesión
+      </button>
+      &nbsp;&nbsp;
+      <button class="btn btn-outline-success my-2 my-sm-0"
+              type="button" (click)="abrirRegisstro()" *ngIf="!sesionIniciada()">
+        <i class="fas fa-user-circle"></i>&nbsp;&nbsp;Regístrate
+      </button>
+
+      <!-- <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/inicio']">
+            <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Lista de Compras
+          </a>
+        </li>
+      </ul> -->
+
+      <button type="button" class="btn btn-info" *ngIf="sesionIniciada()"
+              (click)="mostrarCarrito()">
+        <i class="fas fa-shopping-cart"></i>&nbsp;Carrito de Compras
+      </button>
+      &nbsp;&nbsp;
+      <div class="btn-group" *ngIf="sesionIniciada()">
+        <button type="button" class="btn btn-success dropdown-toggle"
+                data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+          <i class="fas fa-user-check"></i>&nbsp;{{usuario.nombre}}
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <button class="dropdown-item" type="button"><i class="fas fa-user-cog"></i>&nbsp;Ver Perfil</button>
+          <button class="dropdown-item" type="button" (click)="mostrarHistorial()"><i class="fas fa-user-cog"></i>&nbsp;Historial de Compras</button>
+          <button class="dropdown-item" type="button" (click)="cerrarSesion()"><i class="fas fa-sign-out-alt"></i>&nbsp;Cerrar Sesión</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

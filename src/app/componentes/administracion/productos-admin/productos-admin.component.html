@@ -1,0 +1,184 @@
+<div class="contenido abrir">
+  <div class="container">
+  	<div>
+  		<br><br><br>
+  		<h1>PRODUCTOS</h1>
+  		<br><br>
+  	</div>
+  	<div class="float-right" >
+  		<button type="button"
+  			class="btn btn-info" data-toggle="modal" data-target="#miModal">agregar producto
+  			<i class="fas fa-plus"></i>
+  		</button>
+  		<br><br>
+  	</div>
+  	<div>
+
+  		<table class="table table-hover">
+  		  <thead>
+  		    <tr class="table-secondary">
+  		      <th scope="col">ID</th>
+  		      <th scope="col">TIPO</th>
+  		      <th scope="col">NOMBRE</th>
+  		      <th scope="col">EDITAR</th>
+  		      <th scope="col">ELIMINAR</th>
+  		    </tr>
+  		  </thead>
+  		  <tbody>
+  		    <tr *ngFor="let producto of productos">
+  					<td>{{producto.id}}</td>
+  					<td>{{producto.TipoProducto}}</td>
+  					<td>{{producto.ProductoNombre}}</td>
+  					<td>
+  						<button type="button"
+  						class="btn btn-warning">
+  	                  		<i class="fas fa-edit"></i>
+  	                	</button>
+  					</td>
+  					<td>
+  						<button type="button"
+  	                        class="btn btn-danger">
+  	                  		<i class="far fa-trash-alt"></i>
+  	                	</button>
+  					</td>
+  				</tr>
+  		  </tbody>
+  		</table>
+  	</div>
+
+  </div>
+</div>
+
+
+<div class="contenido abrir">
+  <div class="container">
+  	<div>
+  		<br><br><br>
+  		<h1>PRODUCTOS</h1>
+  		<br><br>
+  	</div>
+  	<div class="float-right" >
+  		<button type="button"
+  			class="btn btn-info" data-toggle="modal" data-target="#miModal">agregar producto
+  			<i class="fas fa-plus"></i>
+  		</button>
+  		<br><br>
+  	</div>
+  	<div>
+
+  		<table class="table table-hover">
+  		  <thead>
+  		    <tr class="table-secondary">
+  		      <th scope="col">ID</th>
+  		      <th scope="col">TIPO</th>
+  		      <th scope="col">NOMBRE</th>
+  		      <th scope="col">EDITAR</th>
+  		      <th scope="col">ELIMINAR</th>
+  		    </tr>
+  		  </thead>
+  		  <tbody>
+  		    <tr *ngFor="let producto of productos">
+  					<td>{{producto.id}}</td>
+  					<td>{{producto.TipoProducto}}</td>
+  					<td>{{producto.ProductoNombre}}</td>
+  					<td>
+  						<button type="button"
+  						class="btn btn-warning">
+  	                  		<i class="fas fa-edit"></i>
+  	                	</button>
+  					</td>
+  					<td>
+  						<button type="button"
+  	                        class="btn btn-danger">
+  	                  		<i class="far fa-trash-alt"></i>
+  	                	</button>
+  					</td>
+  				</tr>
+  		  </tbody>
+  		</table>
+  	</div>
+
+  </div>
+</div>
+
+<!-- Modal agregar producto -->
+<div class="modal fade" id="miModal" tabindex="0" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<br><br>
+        <h2 class="modal-title" id="myModalLabel" style="background-color: rgb(208, 213, 230);">Agregar productos Admimistrador</h2>
+
+			</div>
+			<div class="modal-body">
+        <form>
+          <fieldset>
+
+            <!-- <div class="form-group row">
+
+              <div class="col-sm-6 col-form-label">
+                <label for="exampleSelect1">Categoria</label>
+              <select class="form-control" id="exampleSelect1" >
+                <option>Tinte</option>
+                <option>Envase</option>
+
+              </select>
+              </div>
+            </div> -->
+
+            <!-- <div class="form-group row">
+
+              <div class="col-sm-6 col-form-label">
+                <label for="exampleSelect1">Sub Categoria</label>
+              <select class="form-control" id="exampleSelect1" >
+                <option>Tinte Gamuza</option>
+                <option>Tinte Cuero </option>
+                <option>Tinte Casaca </option>
+                <option>Envase tinte </option>
+                <option>Capsuleros </option>
+              </select>
+              </div>
+            </div> -->
+
+            <div class="form-group">
+              <label for="nombreP">Nombre</label>
+              <input type="text" class="form-control" id="nombreP" aria-describedby="emailHelp" placeholder="Ingrese el nombre del producto" name="nombre" [(ngModel)]="nombre">
+
+            </div>
+            <div class="form-group">
+              <label for="DescripcionP">Descripcion</label>
+              <textarea type="text" class="form-control" id="DescripcionP" aria-describedby="emailHelp" placeholder="Ingrese una descripcion del producto" name="descripcion" [(ngModel)]="descripcion">Descripcion del producto</textarea>
+
+            </div>
+            <div class="form-group">
+              <label for="precioP">Precio</label>
+              <input type="text" class="form-control" id="precioP" aria-describedby="emailHelp" placeholder="Ingrese el precio" name="precio" [(ngModel)]="precio">
+
+            </div>
+            <!-- <div class="form-group">
+              <label for="stockP">Stock</label>
+              <input type="" class="form-control" id="stockP" aria-describedby="emailHelp" placeholder="Ingrese el stock">
+
+            </div>
+
+            <div class="form-group">
+              <label for="InputFile">Foto del producto</label>
+              <input type="file" class="form-control-file" id="InputFileP" aria-describedby="fileHelp">
+              <small id="fileHelp" class="form-text text-muted">Seleccione el archivo de imagen *.jpg *.png </small>
+            </div> -->
+
+           <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="guardarProducto(nombre,descripcion,precio)">Guardar cambios</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+
+          </fieldset>
+        </form>
+			</div>
+		</div>
+	</div>
+</div>
